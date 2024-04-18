@@ -4,10 +4,8 @@ import $ from "jquery";
 
 function Dashboard() {
   useEffect(() => {
-    const sidebarToggle = document.querySelector(
-      "javascript:void(0);sidebar-toggle"
-    );
-    const sidebar = $("javascript:void(0);sidebar");
+    const sidebarToggle = document.querySelector("#sidebar-toggle");
+    const sidebar = $("#sidebar");
 
     $(sidebarToggle).on("click", function () {
       sidebar.toggleClass("collapsed");
@@ -36,7 +34,7 @@ function Dashboard() {
         <aside id="sidebar" className="js-sidebar">
           <div className="h-100">
             <div className="sidebar-logo">
-              <a href="javascript:void(0);">CodzSword</a>
+              <Link to="/">CodzSword</Link>
             </div>
             <ul className="sidebar-nav">
               <li className="sidebar-header">Admin Elements</li>
@@ -47,38 +45,38 @@ function Dashboard() {
                 </Link>
               </li>
               <li className="sidebar-item">
-                <a
-                  href="javascript:void(0);"
+                <Link
+                  to="/test"
                   className="sidebar-link collapsed"
-                  data-bs-target="javascript:void(0);pages"
+                  data-bs-target="#pages"
                   data-bs-toggle="collapse"
                   aria-expanded="false"
                 >
                   <i className="fa-solid fa-file-lines pe-2"></i>
                   Pages
-                </a>
+                </Link>
                 <ul
                   id="pages"
                   className="sidebar-dropdown list-unstyled collapse"
-                  data-bs-parent="javascript:void(0);sidebar"
+                  data-bs-parent="#sidebar"
                 >
                   <li className="sidebar-item">
-                    <Link to="Test" className="sidebar-link">
+                    <Link to="/test" className="sidebar-link">
                       Page 1
                     </Link>
                   </li>
                   <li className="sidebar-item">
-                    <Link to="Test" className="sidebar-link">
-                      Page 1
+                    <Link to="/test" className="sidebar-link">
+                      Page 2
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="sidebar-item">
                 <Link
-                  href="javascript:void(0);"
+                  to="/posts"
                   className="sidebar-link collapsed"
-                  data-bs-target="javascript:void(0);posts"
+                  data-bs-target="#posts"
                   data-bs-toggle="collapse"
                   aria-expanded="false"
                 >
@@ -88,7 +86,7 @@ function Dashboard() {
                 <ul
                   id="posts"
                   className="sidebar-dropdown list-unstyled collapse"
-                  data-bs-parent="javascript:void(0);sidebar"
+                  data-bs-parent="#sidebar"
                 >
                   <li className="sidebar-item">
                     <span className="sidebar-link">Post 1</span>
@@ -101,9 +99,7 @@ function Dashboard() {
                   </li>
                 </ul>
               </li>
-              <li className="sidebar-item">
-                {/* Add other sidebar items here */}
-              </li>
+              {/* Add other sidebar items here */}
             </ul>
           </div>
         </aside>
@@ -116,7 +112,7 @@ function Dashboard() {
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                   <a
-                    href="javascript:void(0);"
+                    href="#"
                     data-bs-toggle="dropdown"
                     className="nav-icon pe-md-0"
                   >
@@ -127,10 +123,10 @@ function Dashboard() {
                     />
                   </a>
                   <div className="dropdown-menu dropdown-menu-end">
-                    <a href="javascript:void(0);" className="dropdown-item">
+                    <a href="#" className="dropdown-item">
                       Profile
                     </a>
-                    <a href="javascript:void(0);" className="dropdown-item">
+                    <a href="#" className="dropdown-item">
                       Setting
                     </a>
                     <Link to="/" className="dropdown-item">
@@ -144,7 +140,7 @@ function Dashboard() {
           <main className="content px-3 py-2">
             <Outlet />
           </main>
-          <a href="javascript:void(0);" className="theme-toggle">
+          <a href="#" className="theme-toggle">
             <i className="fa-regular fa-moon"></i>
             <i className="fa-regular fa-sun"></i>
           </a>
@@ -153,7 +149,7 @@ function Dashboard() {
               <div className="row text-muted">
                 <div className="col-6 text-start">
                   <p className="mb-0">
-                    <a href="javascript:void(0);" className="text-muted">
+                    <a href="#" className="text-muted">
                       <strong>CodzSword</strong>
                     </a>
                   </p>
@@ -161,22 +157,22 @@ function Dashboard() {
                 <div className="col-6 text-end">
                   <ul className="list-inline">
                     <li className="list-inline-item">
-                      <a href="javascript:void(0);" className="text-muted">
+                      <a href="#" className="text-muted">
                         Contact
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="javascript:void(0);" className="text-muted">
+                      <a href="#" className="text-muted">
                         About Us
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="javascript:void(0);" className="text-muted">
+                      <a href="#" className="text-muted">
                         Terms
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="javascript:void(0);" className="text-muted">
+                      <a href="#" className="text-muted">
                         Booking
                       </a>
                     </li>
