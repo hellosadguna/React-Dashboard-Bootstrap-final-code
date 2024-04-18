@@ -140,10 +140,10 @@ function Dashboard() {
           <main className="content px-3 py-2">
             <Outlet />
           </main>
-          <a href="#" className="theme-toggle">
+          <Link to="#" className="theme-toggle">
             <i className="fa-regular fa-moon"></i>
             <i className="fa-regular fa-sun"></i>
-          </a>
+          </Link>
           <footer className="footer">
             <div className="container-fluid">
               <div className="row text-muted">
