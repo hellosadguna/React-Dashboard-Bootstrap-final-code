@@ -61,7 +61,7 @@ function Dashboard() {
                   data-bs-parent="#sidebar"
                 >
                   <li className="sidebar-item">
-                    <Link to="/test" className="sidebar-link">
+                    <Link to="/dashboard/test" className="sidebar-link">
                       Page 1
                     </Link>
                   </li>
