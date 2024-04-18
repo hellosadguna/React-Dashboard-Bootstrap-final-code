@@ -4,8 +4,10 @@ import $ from "jquery";
 
 function Dashboard() {
   useEffect(() => {
-    const sidebarToggle = document.querySelector("#sidebar-toggle");
-    const sidebar = $("#sidebar");
+    const sidebarToggle = document.querySelector(
+      "javascript:void(0);sidebar-toggle"
+    );
+    const sidebar = $("javascript:void(0);sidebar");
 
     $(sidebarToggle).on("click", function () {
       sidebar.toggleClass("collapsed");
@@ -34,7 +36,7 @@ function Dashboard() {
         <aside id="sidebar" className="js-sidebar">
           <div className="h-100">
             <div className="sidebar-logo">
-              <a href="#">CodzSword</a>
+              <a href="javascript:void(0);">CodzSword</a>
             </div>
             <ul className="sidebar-nav">
               <li className="sidebar-header">Admin Elements</li>
@@ -46,9 +48,9 @@ function Dashboard() {
               </li>
               <li className="sidebar-item">
                 <a
-                  href="#"
+                  href="javascript:void(0);"
                   className="sidebar-link collapsed"
-                  data-bs-target="#pages"
+                  data-bs-target="javascript:void(0);pages"
                   data-bs-toggle="collapse"
                   aria-expanded="false"
                 >
@@ -58,7 +60,7 @@ function Dashboard() {
                 <ul
                   id="pages"
                   className="sidebar-dropdown list-unstyled collapse"
-                  data-bs-parent="#sidebar"
+                  data-bs-parent="javascript:void(0);sidebar"
                 >
                   <li className="sidebar-item">
                     <Link to="Test" className="sidebar-link">
@@ -74,9 +76,9 @@ function Dashboard() {
               </li>
               <li className="sidebar-item">
                 <Link
-                  href="#"
+                  href="javascript:void(0);"
                   className="sidebar-link collapsed"
-                  data-bs-target="#posts"
+                  data-bs-target="javascript:void(0);posts"
                   data-bs-toggle="collapse"
                   aria-expanded="false"
                 >
@@ -86,7 +88,7 @@ function Dashboard() {
                 <ul
                   id="posts"
                   className="sidebar-dropdown list-unstyled collapse"
-                  data-bs-parent="#sidebar"
+                  data-bs-parent="javascript:void(0);sidebar"
                 >
                   <li className="sidebar-item">
                     <span className="sidebar-link">Post 1</span>
@@ -114,7 +116,7 @@ function Dashboard() {
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                   <a
-                    href="#"
+                    href="javascript:void(0);"
                     data-bs-toggle="dropdown"
                     className="nav-icon pe-md-0"
                   >
@@ -125,10 +127,10 @@ function Dashboard() {
                     />
                   </a>
                   <div className="dropdown-menu dropdown-menu-end">
-                    <a href="#" className="dropdown-item">
+                    <a href="javascript:void(0);" className="dropdown-item">
                       Profile
                     </a>
-                    <a href="#" className="dropdown-item">
+                    <a href="javascript:void(0);" className="dropdown-item">
                       Setting
                     </a>
                     <Link to="/" className="dropdown-item">
@@ -142,7 +144,7 @@ function Dashboard() {
           <main className="content px-3 py-2">
             <Outlet />
           </main>
-          <a href="#" className="theme-toggle">
+          <a href="javascript:void(0);" className="theme-toggle">
             <i className="fa-regular fa-moon"></i>
             <i className="fa-regular fa-sun"></i>
           </a>
@@ -151,7 +153,7 @@ function Dashboard() {
               <div className="row text-muted">
                 <div className="col-6 text-start">
                   <p className="mb-0">
-                    <a href="#" className="text-muted">
+                    <a href="javascript:void(0);" className="text-muted">
                       <strong>CodzSword</strong>
                     </a>
                   </p>
@@ -159,22 +161,22 @@ function Dashboard() {
                 <div className="col-6 text-end">
                   <ul className="list-inline">
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <a href="javascript:void(0);" className="text-muted">
                         Contact
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <a href="javascript:void(0);" className="text-muted">
                         About Us
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <a href="javascript:void(0);" className="text-muted">
                         Terms
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <a href="javascript:void(0);" className="text-muted">
                         Booking
                       </a>
                     </li>
