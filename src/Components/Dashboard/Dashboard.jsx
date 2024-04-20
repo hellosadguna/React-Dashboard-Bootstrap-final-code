@@ -46,7 +46,7 @@ function Dashboard() {
         <aside id="sidebar" className="js-sidebar">
           <div className="h-100">
             <div className="sidebar-logo">
-              <a href="#">CodzSword</a>
+              <Link to="/">CodzSword</Link>
             </div>
             <ul className="sidebar-nav">
               <li className="sidebar-header">Admin Elements</li>
@@ -104,8 +104,8 @@ function Dashboard() {
             <div className="navbar-collapse navbar">
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     data-bs-toggle="dropdown"
                     className="nav-icon pe-md-0"
                   >
@@ -114,14 +114,14 @@ function Dashboard() {
                       className="avatar img-fluid rounded"
                       alt=""
                     />
-                  </a>
+                  </Link>
                   <div className="dropdown-menu dropdown-menu-end">
-                    <a href="#" className="dropdown-item">
+                    <Link to="#" className="dropdown-item">
                       Profile
-                    </a>
-                    <a href="#" className="dropdown-item">
+                    </Link>
+                    <Link to="#" className="dropdown-item">
                       Setting
-                    </a>
+                    </Link>
                     <Link to="/" className="dropdown-item">
                       Logout
                     </Link>
@@ -142,32 +142,32 @@ function Dashboard() {
               <div className="row text-muted">
                 <div className="col-6 text-start">
                   <p className="mb-0">
-                    <a href="#" className="text-muted">
+                    <Link to="/" className="text-muted">
                       <strong>CodzSword</strong>
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div className="col-6 text-end">
                   <ul className="list-inline">
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <Link to="#" className="text-muted">
                         Contact
-                      </a>
+                      </Link>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <Link to="#" className="text-muted">
                         About Us
-                      </a>
+                      </Link>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <Link to="#" className="text-muted">
                         Terms
-                      </a>
+                      </Link>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#" className="text-muted">
+                      <Link to="#" className="text-muted">
                         Booking
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
