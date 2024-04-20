@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import $ from "jquery";
 
 function Dashboard() {
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState("");
+
   useEffect(() => {
     const sidebarToggle = document.querySelector("#sidebar-toggle");
     const sidebar = $("#sidebar");
@@ -11,22 +14,31 @@ function Dashboard() {
       sidebar.toggleClass("collapsed");
     });
 
-    // Remove 'collapsed' class from sidebar when a link is clicked
-    $(".sidebar-item").on("click", function (event) {
-      const isDropdown = $(this).find(".sidebar-dropdown").length > 0;
-      if (!isDropdown && sidebar.hasClass("collapsed")) {
-        sidebar.removeClass("collapsed");
-      }
-      // Stop event propagation to prevent collapsing the menu
-      event.stopPropagation();
+    $(".sidebar-link").on("click", function () {
+      sidebar.removeClass("collapsed");
+      setActiveLink($(this).attr("href"));
+      $(this)
+        .addClass("active")
+        .parent()
+        .siblings()
+        .find(".sidebar-link")
+        .removeClass("active");
     });
+
+    // Set active link based on current location
+    setActiveLink(location.pathname);
 
     // Cleanup function
     return () => {
-      $(sidebarToggle).off("click"); // Remove event listener to avoid memory leaks
-      $(".sidebar-item").off("click"); // Remove event listener for links
+      $(sidebarToggle).off("click");
+      $(".sidebar-link").off("click");
     };
-  }, []); // Empty dependency array to run the effect only once
+  }, [location.pathname]);
+
+  const handleSubmenuClick = (e) => {
+    e.preventDefault(); // Prevent default navigation behavior
+    e.stopPropagation(); // Prevent event propagation
+  };
 
   return (
     <div className="App">
@@ -34,72 +46,53 @@ function Dashboard() {
         <aside id="sidebar" className="js-sidebar">
           <div className="h-100">
             <div className="sidebar-logo">
-              <Link to="/">CodzSword</Link>
+              <a href="#">CodzSword</a>
             </div>
             <ul className="sidebar-nav">
-              {/* <li className="sidebar-header">Admin Elements</li> */}
+              <li className="sidebar-header">Admin Elements</li>
               <li className="sidebar-item">
-                <Link to="/dashboard" className="sidebar-link">
+                <Link
+                  to="/dashboard"
+                  className={`sidebar-link ${
+                    activeLink === "/dashboard" ? "active" : ""
+                  }`}
+                >
                   <i className="fa-solid fa-list pe-2"></i>
                   Dashboard
                 </Link>
               </li>
-              <li className="sidebar-item">
-                <Link
-                  to="/test"
-                  className="sidebar-link collapsed"
+              <li className="">
+                <span
                   data-bs-target="#pages"
                   data-bs-toggle="collapse"
                   aria-expanded="false"
+                  onClick={handleSubmenuClick}
+                  style={{ display: "block", width: "100%", color: "#fff" }}
                 >
                   <i className="fa-solid fa-file-lines pe-2"></i>
                   Pages
-                </Link>
+                </span>
                 <ul
                   id="pages"
                   className="sidebar-dropdown list-unstyled collapse"
                   data-bs-parent="#sidebar"
                 >
                   <li className="sidebar-item">
-                    <Link to="/dashboard/test" className="sidebar-link">
+                    <Link
+                      to="Test"
+                      className={`sidebar-link ${
+                        activeLink === "/Test" ? "active" : ""
+                      }`}
+                    >
                       Page 1
                     </Link>
                   </li>
                   <li className="sidebar-item">
-                    <Link to="/test" className="sidebar-link">
-                      Page 2
-                    </Link>
+                    {/* Replace anchor tag with span */}
+                    <span className="sidebar-link">Page 2</span>
                   </li>
                 </ul>
               </li>
-              <li className="sidebar-item">
-                <Link
-                  to="/posts"
-                  className="sidebar-link collapsed"
-                  data-bs-target="#posts"
-                  data-bs-toggle="collapse"
-                  aria-expanded="false"
-                >
-                  <i className="fa-solid fa-sliders pe-2"></i>
-                  Posts
-                </Link>
-                <ul
-                  id="posts"
-                  className="sidebar-dropdown list-unstyled collapse"
-                  data-bs-parent="#sidebar"
-                >
-                  <li className="sidebar-item">
-                    <span className="sidebar-link">Post 1</span>
-                  </li>
-                  <li className="sidebar-item">
-                    <span className="sidebar-link">Post 2</span>
-                  </li>
-                  <li className="sidebar-item">
-                    <span className="sidebar-link">Post 3</span>
-                  </li>
-                </ul>
-              </li>
-              {/* Add other sidebar items here */}
             </ul>
           </div>
         </aside>
@@ -111,8 +104,8 @@ function Dashboard() {
             <div className="navbar-collapse navbar">
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
-                  <Link
-                    to="#"
+                  <a
+                    href="#"
                     data-bs-toggle="dropdown"
                     className="nav-icon pe-md-0"
                   >
@@ -121,14 +114,14 @@ function Dashboard() {
                       className="avatar img-fluid rounded"
                       alt=""
                     />
-                  </Link>
+                  </a>
                   <div className="dropdown-menu dropdown-menu-end">
-                    <Link to="#" className="dropdown-item">
+                    <a href="#" className="dropdown-item">
                       Profile
-                    </Link>
-                    <Link to="#" className="dropdown-item">
+                    </a>
+                    <a href="#" className="dropdown-item">
                       Setting
-                    </Link>
+                    </a>
                     <Link to="/" className="dropdown-item">
                       Logout
                     </Link>
@@ -140,41 +133,41 @@ function Dashboard() {
           <main className="content px-3 py-2">
             <Outlet />
           </main>
-          <Link to="#" className="theme-toggle">
+          <a href="#" className="theme-toggle">
             <i className="fa-regular fa-moon"></i>
             <i className="fa-regular fa-sun"></i>
-          </Link>
+          </a>
           <footer className="footer">
             <div className="container-fluid">
               <div className="row text-muted">
                 <div className="col-6 text-start">
                   <p className="mb-0">
-                    <Link to="#" className="text-muted">
+                    <a href="#" className="text-muted">
                       <strong>CodzSword</strong>
-                    </Link>
+                    </a>
                   </p>
                 </div>
                 <div className="col-6 text-end">
                   <ul className="list-inline">
                     <li className="list-inline-item">
-                      <Link to="#" className="text-muted">
+                      <a href="#" className="text-muted">
                         Contact
-                      </Link>
+                      </a>
                     </li>
                     <li className="list-inline-item">
-                      <Link to="#" className="text-muted">
+                      <a href="#" className="text-muted">
                         About Us
-                      </Link>
+                      </a>
                     </li>
                     <li className="list-inline-item">
-                      <Link to="#" className="text-muted">
+                      <a href="#" className="text-muted">
                         Terms
-                      </Link>
+                      </a>
                     </li>
                     <li className="list-inline-item">
-                      <Link to="#" className="text-muted">
+                      <a href="#" className="text-muted">
                         Booking
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>
