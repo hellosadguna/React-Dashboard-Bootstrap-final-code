@@ -88,8 +88,14 @@ function Dashboard() {
                     </Link>
                   </li>
                   <li className="sidebar-item">
-                    {/* Replace anchor tag with span */}
-                    <span className="sidebar-link">Page 2</span>
+                    <Link
+                      to="Test"
+                      className={`sidebar-link ${
+                        activeLink === "/Test" ? "active" : ""
+                      }`}
+                    >
+                      Page 1
+                    </Link>
                   </li>
                 </ul>
               </li>
