@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import $ from "jquery";
+import user from "../../assets/images/user.png";
 
 function Dashboard() {
   const location = useLocation();
@@ -57,7 +58,6 @@ function Dashboard() {
                     activeLink === "/dashboard" ? "active" : ""
                   }`}
                 >
-                  <i className="fa-solid fa-list pe-2"></i>
                   Dashboard
                 </Link>
               </li>
@@ -67,15 +67,24 @@ function Dashboard() {
                   data-bs-toggle="collapse"
                   aria-expanded="false"
                   onClick={handleSubmenuClick}
-                  style={{ display: "block", width: "100%", color: "#fff" }}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    color: "#fff",
+                    marginLeft: "25px",
+                  }}
                 >
-                  <i className="fa-solid fa-file-lines pe-2"></i>
-                  Pages
+                  {/* <i className="fa-solid fa-file-lines pe-2"></i> */}
+                  Pages &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <i className="fa fa-angle-down" aria-hidden="true"></i>
                 </span>
                 <ul
                   id="pages"
                   className="sidebar-dropdown list-unstyled collapse"
                   data-bs-parent="#sidebar"
+                  style={{
+                    marginLeft: "5px",
+                  }}
                 >
                   <li className="sidebar-item">
                     <Link
@@ -116,7 +125,7 @@ function Dashboard() {
                     className="nav-icon pe-md-0"
                   >
                     <img
-                      src="image/profile.jpg"
+                      src={user}
                       className="avatar img-fluid rounded"
                       alt=""
                     />
