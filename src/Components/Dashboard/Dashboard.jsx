@@ -2,22 +2,40 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import $ from "jquery";
 import user from "../../assets/images/user.png";
+import { Dashboardhome } from "./Dashboardhome";
 
 function Dashboard() {
+  // Get current location
   const location = useLocation();
+  // State to manage active link
   const [activeLink, setActiveLink] = useState("");
+  // Function to store name in localStorage
+  const Hellocode = (e) => {
+    localStorage.setItem("getname", e);
+  };
+  // State to store name from localStorage
+  const [getname, setgetname] = useState("");
 
   useEffect(() => {
     const sidebarToggle = document.querySelector("#sidebar-toggle");
     const sidebar = $("#sidebar");
+    const getallnames = localStorage.getItem("getname");
 
+    // Set name from localStorage
+    if (getallnames) {
+      setgetname(getallnames);
+    }
+
+    // Toggle sidebar
     $(sidebarToggle).on("click", function () {
       sidebar.toggleClass("collapsed");
     });
 
+    // Handle sidebar link clicks
     $(".sidebar-link").on("click", function () {
       sidebar.removeClass("collapsed");
       setActiveLink($(this).attr("href"));
+
       $(this)
         .addClass("active")
         .parent()
@@ -36,6 +54,7 @@ function Dashboard() {
     };
   }, [location.pathname]);
 
+  // Handle submenu click
   const handleSubmenuClick = (e) => {
     e.preventDefault(); // Prevent default navigation behavior
     e.stopPropagation(); // Prevent event propagation
@@ -47,12 +66,13 @@ function Dashboard() {
         <aside id="sidebar" className="js-sidebar">
           <div className="h-100">
             <div className="sidebar-logo">
-              <Link to="/">CodzSword</Link>
+              <Link to="/dashboard">CodzSword</Link>
             </div>
             <ul className="sidebar-nav">
               <li className="sidebar-header">Admin Elements</li>
               <li className="sidebar-item">
                 <Link
+                  onClick={() => Hellocode("dashboard")}
                   to="/dashboard"
                   className={`sidebar-link ${
                     activeLink === "/dashboard" ? "active" : ""
@@ -88,6 +108,7 @@ function Dashboard() {
                 >
                   <li className="sidebar-item">
                     <Link
+                      onClick={() => Hellocode("test")}
                       to="Test"
                       className={`sidebar-link ${
                         activeLink === "/Test" ? "active" : ""
@@ -146,7 +167,28 @@ function Dashboard() {
             </div>
           </nav>
           <main className="content px-3 py-2">
+            {/* Breadgrums */}
+            <nav
+              style={{
+                "--bs-breadcrumb-divider":
+                  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E\")",
+              }}
+            >
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
+                  <Link to="/dashboard" onClick={() => Hellocode("dashboard")}>
+                    Dashboard
+                  </Link>
+                </li>
+                {getname !== "dashboard" && (
+                  <li className="breadcrumb-item active" aria-current="page">
+                    {getname}
+                  </li>
+                )}
+              </ol>
+            </nav>
             <Outlet />
+            <Dashboardhome />
           </main>
           {/* <Link to="#" className="theme-toggle">
             <i className="fa-regular fa-moon"></i>
@@ -157,7 +199,11 @@ function Dashboard() {
               <div className="row text-muted">
                 <div className="col-6 text-start">
                   <p className="mb-0">
-                    <Link to="/" className="text-muted">
+                    <Link
+                      to="/dashboard"
+                      className="text-muted"
+                      onClick={() => Hellocode("dashboard")}
+                    >
                       <strong>CodzSword</strong>
                     </Link>
                   </p>

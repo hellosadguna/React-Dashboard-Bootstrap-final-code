@@ -206,3 +206,8 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
 .sidebar-link.active {
   color: #ff0000 !important; /* Text color for active link */
 }
+.breadcrumb {
+  li {
+    text-transform: capitalize;
+  }
+}
