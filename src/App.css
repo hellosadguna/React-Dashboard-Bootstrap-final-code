@@ -211,3 +211,189 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
     text-transform: capitalize;
   }
 }
+/* loGIN */
+a {
+  text-decoration: none !important;
+}
+
+.cmm_btn {
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #38d39f;
+  padding: 6px 20px;
+  border-radius: 5px;
+  color: #38d39f;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.cmm_btn:hover {
+  background-color: #38d39f;
+  color: #fff;
+  font-weight: 800;
+  transition: 0.5s;
+}
+
+#main_div {
+  background-image: url(../src/assets/images/wave.png);
+  background-color: #fff;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: contain;
+  overflow: hidden;
+}
+#main_div img {
+  width: 100%;
+}
+#main_div .ds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#main_div .img_sec-ava {
+  text-align: center;
+}
+#main_div .img_sec-ava img {
+  width: 20% !important;
+  margin-bottom: 20px;
+}
+#main_div .form-control:focus {
+  border-color: #38d39f;
+  outline: 0;
+  box-shadow: 0 0 0 0rem rgba(13, 110, 253, 0.25);
+}
+#main_div .has-float-label .form-control:-moz-placeholder-shown:not(:focus) + * {
+  font-size: 120%;
+  opacity: 0.5;
+  top: 0.5em;
+}
+#main_div .has-float-label .form-control:placeholder-shown:not(:focus) + * {
+  font-size: 120%;
+  opacity: 0.5;
+  top: 0.5em;
+}
+#main_div .abc span p {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  #main_div {
+    background-image: url(../src/assets/images/bg.svg);
+    height: 100vh;
+    background-position-y: center;
+  }
+  #main_div .img_sec img {
+    display: none;
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.has-float-label {
+  display: block;
+  position: relative;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #55595c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+[role="button"],
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+button,
+input,
+select {
+  overflow: visible;
+}
+#main_div .has-float-label .form-control:placeholder-shown:not(:focus) + * {
+  font-size: 120%;
+  opacity: 0.5;
+  top: 0.5em;
+}
+.has-float-label label,
+.has-float-label > span {
+  position: absolute;
+  cursor: text;
+  font-size: 75%;
+  opacity: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  top: -0.5em;
+  left: 0.75rem;
+  z-index: 3;
+  line-height: 1;
+  padding: 0 1px;
+}
+label {
+  display: inline-block;
+}
+.has-float-label label::after,
+.has-float-label > span::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  background: #fff;
+  height: 2px;
+  top: 50%;
+  left: -0.2em;
+  right: -0.2em;
+  z-index: -1;
+}
+.eye-icon {
+  position: absolute;
+  right: 10px; /* Adjust the value to your preference */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
