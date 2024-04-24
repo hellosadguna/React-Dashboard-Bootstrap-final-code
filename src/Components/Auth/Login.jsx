@@ -152,7 +152,7 @@ export const Login = () => {
                           <input
                             className="form-control mb-2"
                             id="confirm-password"
-                            type="password"
+                            type="text"
                             placeholder=" "
                           />
                           <label htmlFor="confirm-password" className="">
@@ -193,7 +193,7 @@ export const Login = () => {
                   {/* Forgot Password Form */}
                   {switchh === "forgotpp" && (
                     <form action="" id="login_forms">
-                      <p>forgot password</p>
+                      {/* <p>forgot password</p> */}
                       <div className="form-group">
                         <span className="has-float-label">
                           <input
@@ -212,14 +212,15 @@ export const Login = () => {
                       >
                         Submit
                       </Link>
-                      <Link
+                      &nbsp;
+                      {/* <Link
                         className="cmm_btn"
                         to=""
                         onClick={() => switchsec("login")}
                       >
                         {" "}
                         Sign In{" "}
-                      </Link>{" "}
+                      </Link>{" "} */}
                       &nbsp;
                     </form>
                   )}
@@ -227,7 +228,7 @@ export const Login = () => {
                   {/* Change Password Form */}
                   {switchh === "changepassword" && (
                     <form action="" id="login_forms">
-                      <p>change password </p>
+                      {/* <p>change password </p> */}
                       <div className="form-group">
                         <span className="has-float-label">
                           <input
