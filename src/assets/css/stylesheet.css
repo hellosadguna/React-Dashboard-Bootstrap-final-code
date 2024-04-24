@@ -1,0 +1,99 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.ddddddd body {
+  background-color: white;
+  padding: 2em;
+}
+.ddddddd *:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+.ddddddd a {
+  color: #369;
+}
+.ddddddd .dt-buttons .btn {
+  background-color: #4676d7;
+  color: white;
+  margin-bottom: 1em;
+}
+.ddddddd .dt-buttons .btn:hover {
+  background-color: #036;
+  color: white;
+}
+.ddddddd .title-text {
+  margin: 2em 0;
+}
+.ddddddd .table > tbody > tr > td:nth-child(1) > i {
+  margin-right: 8px;
+  margin-top: 4px;
+}
+.ddddddd .table > tbody > tr > td:nth-child(2) {
+  text-align: center;
+}
+.ddddddd .entries {
+  margin-top: 8px;
+}
+.ddddddd .pagination {
+  margin-top: 1em !important;
+}
+.ddddddd .pagination > li > a {
+  background-color: white;
+  color: #4676d7;
+}
+.ddddddd .pagination > li > a:focus,
+.ddddddd .pagination > li > a:hover,
+.ddddddd .pagination > li > span:focus,
+.ddddddd .pagination > li > span:hover {
+  color: #036;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.ddddddd .pagination > .active > a {
+  color: white;
+  background-color: #4676d7 !important;
+  border: solid 1px #4676d7 !important;
+}
+.ddddddd .pagination > .active > a:hover {
+  background-color: #4676d7 !important;
+  border: solid 1px #4676d7;
+}
+.ddddddd .green {
+  color: #4caf50;
+}
+.ddddddd .blue {
+  color: #008cba;
+}
+.ddddddd .red {
+  color: #f44336;
+}
+.ddddddd .gray {
+  color: #e7e7e7;
+}
+.ddddddd .black {
+  color: #555555;
+}
+
+.ddddddd {
+  border: none !important;
+}
+.ddddddd button {
+  background-color: #38d39f;
+  outline: none;
+  color: #ffffff;
+  border: none !important;
+  padding: 5px 15px;
+}
+
+.sidebar-item li {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=stylesheet.css.map */

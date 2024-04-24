@@ -1,0 +1,134 @@
+// styles working
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.main {
+}
+.ddddddd {
+    body {
+        background-color: white;
+        padding: 2em;
+    }
+
+    *:focus {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    a {
+        color: #369;
+    }
+
+    .dt-buttons {
+        & .btn {
+            background-color: #4676d7;
+            color: white;
+            margin-bottom: 1em;
+            &:hover {
+                background-color: #036;
+                color: white;
+            }
+        }
+    }
+
+    .title-text {
+        margin: 2em 0;
+    }
+
+    .table > tbody > tr > td:nth-child(1) > i {
+        margin-right: 8px;
+        margin-top: 4px;
+    }
+
+    .table > tbody > tr > td:nth-child(2) {
+        text-align: center;
+    }
+
+    .entries {
+        margin-top: 8px;
+    }
+
+    .pagination {
+        margin-top: 1em !important;
+    }
+
+    .pagination > li > a {
+        background-color: white;
+        color: #4676d7;
+    }
+
+    .pagination > li > a:focus,
+    .pagination > li > a:hover,
+    .pagination > li > span:focus,
+    .pagination > li > span:hover {
+        color: #036;
+        background-color: #eee;
+        border-color: #ddd;
+    }
+
+    .pagination > .active > a {
+        color: white;
+        background-color: #4676d7 !important;
+        border: solid 1px #4676d7 !important;
+    }
+
+    .pagination > .active > a:hover {
+        background-color: #4676d7 !important;
+        border: solid 1px #4676d7;
+    }
+
+    .green {
+        color: #4caf50;
+    }
+
+    .blue {
+        color: #008cba;
+    }
+
+    .red {
+        color: #f44336;
+    }
+
+    .gray {
+        color: #e7e7e7;
+    }
+
+    .black {
+        color: #555555;
+    }
+}
+// .cmm_btn {
+//     display: inline-block;
+//     padding: 10px 20px;
+//     background-color: #007bff;
+//     color: #ffffff;
+//     text-decoration: none;
+//     border-radius: 5px;
+// }
+
+// .cmm_btn:hover {
+//     background-color: #0056b3;
+// }
+.ddddddd {
+    border: none !important;
+    button {
+        background-color: #38d39f;
+        outline: none;
+        color: #ffffff;
+        border: none !important;
+        padding: 5px 15px;
+    }
+}
+.sidebar-item {
+    li {
+        margin-bottom: 10px;
+    }
+}

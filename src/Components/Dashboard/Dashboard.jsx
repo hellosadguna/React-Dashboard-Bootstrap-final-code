@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import $ from "jquery";
 import user from "../../assets/images/user.png";
-import { Dashboardhome } from "./Dashboardhome";
 
 function Dashboard() {
   // Get current location
@@ -66,21 +65,22 @@ function Dashboard() {
         <aside id="sidebar" className="js-sidebar">
           <div className="h-100">
             <div className="sidebar-logo">
-              <Link to="/dashboard">CodzSword</Link>
+              <Link to="/dashboard/homepage">CodzSword</Link>
             </div>
             <ul className="sidebar-nav">
-              <li className="sidebar-header">Admin Elements</li>
+              {/* <li className="sidebar-header">Admin Elements</li> */}
               <li className="sidebar-item">
                 <Link
                   onClick={() => Hellocode("dashboard")}
-                  to="/dashboard"
+                  to="/dashboard/homepage"
                   className={`sidebar-link ${
-                    activeLink === "/dashboard" ? "active" : ""
+                    activeLink === "/dashboard/homepage" ? "active" : ""
                   }`}
                 >
                   Dashboard
                 </Link>
               </li>
+              {/* Dropdown */}
               <li className="">
                 <span
                   data-bs-target="#pages"
@@ -95,7 +95,7 @@ function Dashboard() {
                   }}
                 >
                   {/* <i className="fa-solid fa-file-lines pe-2"></i> */}
-                  Pages &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Url's &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <i className="fa fa-angle-down" aria-hidden="true"></i>
                 </span>
                 <ul
@@ -108,23 +108,75 @@ function Dashboard() {
                 >
                   <li className="sidebar-item">
                     <Link
-                      onClick={() => Hellocode("test")}
-                      to="Test"
+                      onClick={() => Hellocode("uploadurl")}
+                      to="/dashboard/uploadurl"
                       className={`sidebar-link ${
-                        activeLink === "/Test" ? "active" : ""
+                        activeLink === "/dashboard/uploadurl" ? "active" : ""
                       }`}
                     >
-                      Page 1
+                      Upload Url
                     </Link>
                   </li>
                   <li className="sidebar-item">
                     <Link
-                      to="Test"
+                      onClick={() => Hellocode("GetUrls")}
+                      to="/dashboard/getUrls"
                       className={`sidebar-link ${
-                        activeLink === "/Test" ? "active" : ""
+                        activeLink === "/dashboard/getUrls" ? "active" : ""
                       }`}
                     >
-                      Page 1
+                      Get Urls
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              {/* Dropdown */}
+              <li className="">
+                <span
+                  data-bs-target="#upload"
+                  data-bs-toggle="collapse"
+                  aria-expanded="false"
+                  onClick={handleSubmenuClick}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    color: "#fff",
+                    marginLeft: "25px",
+                  }}
+                >
+                  {/* <i className="fa-solid fa-file-lines pe-2"></i> */}
+                  Upload Files &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <i className="fa fa-angle-down" aria-hidden="true"></i>
+                </span>
+                <ul
+                  id="upload"
+                  className="sidebar-dropdown list-unstyled collapse"
+                  data-bs-parent="#sidebar"
+                  style={{
+                    marginLeft: "5px",
+                  }}
+                >
+                  <li className="sidebar-item">
+                    <Link
+                      onClick={() => Hellocode("uploadurl")}
+                      to="/dashboard/uploadurl"
+                      className={`sidebar-link ${
+                        activeLink === "/dashboard/uploadurl" ? "active" : ""
+                      }`}
+                    >
+                      Upload Files
+                    </Link>
+                  </li>
+                  <li className="sidebar-item">
+                    <Link
+                      onClick={() => Hellocode("GetUrls")}
+                      to="/dashboard/getUrls"
+                      className={`sidebar-link ${
+                        activeLink === "/dashboard/getUrls" ? "active" : ""
+                      }`}
+                    >
+                      View Files
                     </Link>
                   </li>
                 </ul>
@@ -176,7 +228,10 @@ function Dashboard() {
             >
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
-                  <Link to="/dashboard" onClick={() => Hellocode("dashboard")}>
+                  <Link
+                    to="/dashboard/homepage"
+                    onClick={() => Hellocode("dashboard")}
+                  >
                     Dashboard
                   </Link>
                 </li>
@@ -188,7 +243,7 @@ function Dashboard() {
               </ol>
             </nav>
             <Outlet />
-            <Dashboardhome />
+            {/* <Dashboardhome /> */}
           </main>
           {/* <Link to="#" className="theme-toggle">
             <i className="fa-regular fa-moon"></i>
